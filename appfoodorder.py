@@ -21,6 +21,6 @@ if st.button("Order"):
             st.write(f"**Customer Name:** {customer_name}")
             st.write(f"**Food:** {food}")
             st.write(f"**Quantity:** {quantity}")
-            st.write(f"**Total Price: RM {total:.2f}")
+            st.write(f"**Total Price:** RM {total:.2f}")
     except Exception as e:
         st.error(f"Unexpected error: {str(e)}")
