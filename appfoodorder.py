@@ -2,8 +2,8 @@ import streamlit as st
 
 st.title("Food Ordering System")
 
-customer_name = st.text_input("Customer Name")
-food = st.selectbox("Food Selection", ["Nasi Lemak", "Chicken Chop", "Burger"])
+customer_name = st.text_input("Enter Customer Name")
+food = st.selectbox("Select Food", ["Nasi Lemak", "Chicken Chop", "Burger"])
 quantity = st.number_input("Quantity", min_value=0, step=1)  # Allows 0 for validation
 
 prices = {"Nasi Lemak": 5, "Chicken Chop": 12, "Burger": 8}
@@ -17,7 +17,8 @@ if st.button("Order"):
         else:
             total = quantity * prices[food]
             st.success("Order placed successfully!")
-            st.write(f"**Customer:** {customer_name}")
+            st.markdown("----- Booking Summary -----")
+            st.write(f"**Customer Name:** {customer_name}")
             st.write(f"**Food:** {quantity} x {food}")
             st.write(f"**Total Price: RM {total:.2f}")
     except Exception as e:
