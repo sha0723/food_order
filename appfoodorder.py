@@ -4,7 +4,7 @@ st.title("Food Ordering System")
 
 customer_name = st.text_input("Enter Customer Name")
 food = st.selectbox("Select Food", ["Nasi Lemak", "Chicken Chop", "Burger"])
-quantity = st.number_input("Quantity", min_value=0, step=1)  # Allows 0 for validation
+quantity = st.number_input("Enter Quantity", min_value=0, step=1)  # Allows 0 for validation
 
 prices = {"Nasi Lemak": 5, "Chicken Chop": 12, "Burger": 8}
 
@@ -17,7 +17,7 @@ if st.button("Order"):
         else:
             total = quantity * prices[food]
             st.success("Order placed successfully!")
-            st.markdown("----- Booking Summary -----")
+            st.markdown("----- Order Summary -----")
             st.write(f"**Customer Name:** {customer_name}")
             st.write(f"**Food:** {food}")
             st.write(f"**Quantity:** {quantity}")
